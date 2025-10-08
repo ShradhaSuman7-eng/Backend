@@ -45,9 +45,9 @@ const PING_URL = process.env.PING_URL;
 setInterval(async () => {
   try {
     const response = await axios.get(PING_URL);
-    console.log(`🔁 Pinged server: ${PING_URL} — Status: ${response.status}`);
+    console.log(`Pinged server: ${PING_URL} — Status: ${response.status}`);
   } catch (err) {
-    console.error("⚠️ Ping failed:", err.message);
+    console.error("Ping failed:", err.message);
   }
 }, 5 * 60 * 1000); // every 5 minutes
 
