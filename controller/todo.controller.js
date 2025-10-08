@@ -5,7 +5,7 @@ export const createTodo = async (req, res) => {
   const todo = new Todo({
     text: req.body.text,
     completed: req.body.completed,
-    user: req.user._id, // associate todo with loggedin user
+    user: req.user._id,
   });
 
   try {
@@ -30,7 +30,7 @@ export const getTodos = async (req, res) => {
 export const updateTodo = async (req, res) => {
   try {
     const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
-      new: true, // return the updated document
+      new: true,
     });
 
     if (!todo) {
